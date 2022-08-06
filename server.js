@@ -5,6 +5,7 @@ const port = 3000;
 
 const express = require('express');
 const app = express();
+const path = require('path');
 
 const es6Renderer = require('express-es6-template-engine');
 app.engine('html', es6Renderer);
@@ -14,7 +15,7 @@ app.set('view engine', 'html');
 const server = http.createServer(app);
 const db = require('./db');
 
-
+app.use(express.static(path.join(__dirname,'public')));
 
 
 
