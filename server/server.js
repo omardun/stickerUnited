@@ -19,6 +19,35 @@ const db = require('./db');
 app.use(express.static(path.join(__dirname,'public')));
 
 
+// Homepage
+app.get('/', (req, res) => {
+    res.render('template', {
+        locals: {
+            title: "Sticker United"
+        },
+        partials: {
+            head: '/partials/head',
+            header: '/partials/header',
+            component: '/partials/home',
+            footer: '/partials/footer',
+        }
+    });
+});
+
+// Products Page
+app.get('/collections', (req, res) => {
+    res.render('template', {
+        locals: {
+            title: "Sticker United"
+        },
+        partials: {
+            head: '/partials/head',
+            header: '/partials/header',
+            component: '/partials/productsPage',
+            footer: '/partials/footer',
+        }
+    });
+});
 
 
 
