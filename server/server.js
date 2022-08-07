@@ -15,6 +15,7 @@ app.set('view engine', 'html');
 const server = http.createServer(app);
 const db = require('./db');
 
+// Routes
 app.use(express.static(path.join(__dirname,'public')));
 
 
