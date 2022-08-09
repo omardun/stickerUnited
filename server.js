@@ -56,7 +56,7 @@ app.get('/login', (req, res) => {
         partials: {
             head: '/partials/head',
             header: '/partials/header',
-            component: '/partials/loginPage',
+            component: '/partials/login',
             footer: '/partials/footer',
         }
     });
@@ -71,7 +71,22 @@ app.get('/contact', (req, res) => {
         partials: {
             head: '/partials/head',
             header: '/partials/header',
-            component: '/partials/contactUsPage',
+            component: '/partials/contactUs',
+            footer: '/partials/footer',
+        }
+    });
+});
+
+// Newletter Page
+app.get('/newsletter', (req, res) => {
+    res.render('template', {
+        locals: {
+            title: "Sticker United"
+        },
+        partials: {
+            head: '/partials/head',
+            header: '/partials/header',
+            component: '/partials/newsletter',
             footer: '/partials/footer',
         }
     });
