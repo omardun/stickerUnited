@@ -63,7 +63,7 @@ app.get('/login', (req, res) => {
 });
 
 // Contact Us Page
-app.get('/contact', (req, res) => {
+app.get('/contactUs', (req, res) => {
     res.render('template', {
         locals: {
             title: "Sticker United"
