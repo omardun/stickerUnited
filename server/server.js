@@ -48,7 +48,35 @@ app.get('/collections', (req, res) => {
         }
     });
 });
+// Login Page
+app.get('/login', (req, res) => {
+    res.render('template', {
+        locals: {
+            title: "Sticker United"
+        },
+        partials: {
+            head: '/partials/head',
+            header: '/partials/header',
+            component: '/partials/loginPage',
+            footer: '/partials/footer',
+        }
+    });
+});
 
+// Contact Us Page
+app.get('/contact', (req, res) => {
+    res.render('template', {
+        locals: {
+            title: "Sticker United"
+        },
+        partials: {
+            head: '/partials/head',
+            header: '/partials/header',
+            component: '/partials/contactUsPage',
+            footer: '/partials/footer',
+        }
+    });
+});
 
 
 

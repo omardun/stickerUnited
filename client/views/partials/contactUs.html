@@ -1,15 +1,16 @@
-
-    <h1>Contact Us</h1>
-    <form onsubmit="return false"></form>
-    <div class="container" id="container">
-        <input type="text" placeholder="Enter your full name" id="fullName" />
-<br><br>
-<input type="text" placeholder="Enter your email" id="email" />
-<br><br>
-<input type="text" placeholder="Enter your phone nummber" id="phoneNumber" />
-<br><br>
-<input type="text" placeholder="Enter your message" id="message" />
-<br><br>
-        
-        <div class="send"></div>
-    </div>
+<h1>Contact Us</h1>
+<form onsubmit="return false"></form>
+<div class="container" id="container">
+    <input type="text" placeholder="Enter your full name" id="fullName" />
+    <br><br>
+    <input type="email" placeholder="Enter your email" id="email" />
+    <br><br>
+    <input type="number" placeholder="Enter your phone nummber" id="phoneNumber" />
+    <br><br>
+    <span>Please leave us a message</span>
+    <br>
+    <textarea id="message" rows="6"></textarea>
+    <br><br>
+    <button onclick="sendContact();">Send Contact</button>
+    <div class="send"></div>
+</div>
