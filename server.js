@@ -2,6 +2,7 @@ const http = require('http');
 
 const hostname = '127.0.0.1';
 const port = 3000;
+const {db} = require('./models')  
 
 const express = require('express');
 const app = express();
@@ -20,6 +21,13 @@ app.use(express.static(path.join(__dirname,'public')));
 
 // Homepage
 app.get('/', (req, res) => {
+    let pictures = db.findAll({
+        include: [{
+            models: db
+        }]
+        
+    })
+    res.json(pictures)
     res.render('template', {
         locals: {
             title: "Sticker United"
@@ -29,6 +37,7 @@ app.get('/', (req, res) => {
             header: '/partials/header',
             component: '/partials/home',
             footer: '/partials/footer',
+
         }
     });
 });
