@@ -29,14 +29,13 @@ app.get('/', (req, res) => {
             head: '/partials/head',
             header: '/partials/header',
             component: '/partials/home',
-            footer: '/partials/footer',
 
         }
     });
 });
 
-// Products Page
-app.get('/collections', (req, res) => {
+// Stickers Page
+app.get('/stickers', (req, res) => {
     res.render('template', {
         locals: {
             title: "Sticker United"
@@ -44,11 +43,27 @@ app.get('/collections', (req, res) => {
         partials: {
             head: '/partials/head',
             header: '/partials/header',
-            component: '/partials/productsPage',
-            footer: '/partials/footer',
+            component: '/partials/stickers',
         }
     });
 });
+
+// Single Sticker Page
+app.get('/stickers/:', (req, res) => {
+    res.render('template', {
+        locals: {
+            title: "Sticker United"
+        },
+        partials: {
+            head: '/partials/head',
+            header: '/partials/header',
+            component: '/partials/singleSticker',
+        }
+    });
+});
+
+
+
 // Login Page
 app.get('/login', (req, res) => {
     res.render('template', {
@@ -59,7 +74,6 @@ app.get('/login', (req, res) => {
             head: '/partials/head',
             header: '/partials/header',
             component: '/partials/login',
-            footer: '/partials/footer',
         }
     });
 });
@@ -74,26 +88,9 @@ app.get('/contactUs', (req, res) => {
             head: '/partials/head',
             header: '/partials/header',
             component: '/partials/contactUs',
-            footer: '/partials/footer',
         }
     });
 });
-
-// Newletter Page
-app.get('/newsletter', (req, res) => {
-    res.render('template', {
-        locals: {
-            title: "Sticker United"
-        },
-        partials: {
-            head: '/partials/head',
-            header: '/partials/header',
-            component: '/partials/newsletter',
-            footer: '/partials/footer',
-        }
-    });
-});
-
 
 
 server.listen(port, hostname, () => {
