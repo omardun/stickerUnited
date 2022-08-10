@@ -21,13 +21,6 @@ app.use(express.static(path.join(__dirname,'public')));
 
 // Homepage
 app.get('/', (req, res) => {
-    let pictures = db.findAll({
-        include: [{
-            models: db
-        }]
-        
-    })
-    res.json(pictures)
     res.render('template', {
         locals: {
             title: "Sticker United"
