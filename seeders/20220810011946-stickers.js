@@ -1,24 +1,86 @@
 'use strict';
 
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.bulkInsert(
+      'stickers',
+      [
+        {
+          name: 'Bucs Sticker',
+          price: 2.00,
+          shape: 'square',
+          createdAt: new Date(),
+          updatedAt: new Date()
+        }, {
+          name: 'Cubs Sticker',
+          price: 2.50,
+          shape: 'round',
+          createdAt: new Date(),
+          updatedAt: new Date()
+        }, {
+          name: 'Tupac Sticker',
+          price: 2.00,
+          shape: 'square',
+          createdAt: new Date(),
+          updatedAt: new Date()
+        }, {
+          name: 'Bad Bunny Sticker',
+          price: 3.00,
+          shape: 'rectangle',
+          createdAt: new Date(),
+          updatedAt: new Date()
+        }, {
+          name: 'Kobe Sticker',
+          price: 2.50,
+          shape: 'round',
+          createdAt: new Date(),
+          updatedAt: new Date()
+        }, {
+          name: 'Jordan Sticker',
+          price: 3.00,
+          shape: 'rectangle',
+          createdAt: new Date(),
+          updatedAt: new Date()
+        }, {
+          name: '?(._.)? Sticker',
+          price: 2.00,
+          shape: 'square',
+          createdAt: new Date(),
+          updatedAt: new Date()
+        }, {
+          name: 'Mike Wazoski Sticker',
+          price: 2.00,
+          shape: 'square',
+          createdAt: new Date(),
+          updatedAt: new Date()
+        }, {
+          name: 'Ben Tennyson Sticker',
+          price: 2.50,
+          shape: 'round',
+          createdAt: new Date(),
+          updatedAt: new Date()
+        }, {
+          name: 'Ed, Edd n Eddy Sticker',
+          price: 3.00,
+          shape: 'rectangle',
+          createdAt: new Date(),
+          updatedAt: new Date()
+        }, {
+          name: 'Cat Sticker',
+          price: 2.00,
+          shape: 'square',
+          createdAt: new Date(),
+          updatedAt: new Date()
+        }, {
+          name: 'Rocket League car Sticker',
+          price: 2.50,
+          shape: 'round',
+          createdAt: new Date(),
+          updatedAt: new Date()
+        }
+      ], {});
   },
-
-  async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.bulkDelete('stickers', null, {});
   }
-};
+}; 
