@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('StickerDBs', {
+    await queryInterface.createTable('Stickers', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -14,10 +14,10 @@ module.exports = {
       price: {
         type: Sequelize.INTEGER
       },
-      shape: {
+      category: {
         type: Sequelize.STRING
       },
-      image: {
+      imageURL: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -31,6 +31,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('StickerDBs');
+    await queryInterface.dropTable('Stickers');
   }
 };
