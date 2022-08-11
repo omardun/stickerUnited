@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class StickerDB extends Model {
+  class Stickers extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,14 +13,14 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  StickerDB.init({
+  Stickers.init({
     name: DataTypes.STRING,
     price: DataTypes.INTEGER,
-    shape: DataTypes.STRING,
-    image: DataTypes.STRING
+    category: DataTypes.STRING,
+    imageURL: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'StickerDB',
+    modelName: 'Stickers',
   });
-  return StickerDB;
+  return Stickers;
 };

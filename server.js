@@ -2,11 +2,12 @@ const http = require('http');
 
 const hostname = '127.0.0.1';
 const port = 3000;
-const {db} = require('./models')  
+const db = require('./models')  
 
 const express = require('express');
 const app = express();
 const path = require('path');
+
 
 const es6Renderer = require('express-es6-template-engine');
 app.engine('html', es6Renderer);
@@ -20,10 +21,12 @@ app.use(express.static(path.join(__dirname,'public')));
 
 
 // Homepage
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
+    const stickers = await db.Stickers.findAll()
     res.render('template', {
         locals: {
-            title: "Sticker United"
+            title: "Sticker United",
+            stickers
         },
         partials: {
             head: '/partials/head',
