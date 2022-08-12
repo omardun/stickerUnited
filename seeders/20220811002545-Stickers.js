@@ -9,84 +9,84 @@ module.exports = {
           name: 'Bucs Sticker',
           price: 2.00,
           category: 'sports',
-          imageURL: 'https://imgur.com/4cFMOia',
+          imageURL: 'https://i.imgur.com/4cFMOia.jpg',
           createdAt: new Date(),
           updatedAt: new Date()
         }, {
           name: 'Cubs Sticker',
           price: 2.50,
           category: 'sports',
-          imageURL: 'https://imgur.com/fe8Gf6a',
+          imageURL: 'https://i.imgur.com/fe8Gf6a.jpg',
           createdAt: new Date(),
           updatedAt: new Date()
         }, {
           name: 'Tupac Sticker',
           price: 2.00,
           category: 'Artists',
-          imageURL: 'https://imgur.com/peHbUIS',
+          imageURL: 'https://i.imgur.com/peHbUIS.jpg',
           createdAt: new Date(),
           updatedAt: new Date()
         }, {
           name: 'Bad Bunny Sticker',
           price: 3.00,
           category: 'Artists',
-          imageURL: 'https://imgur.com/qVkj3iH',
+          imageURL: 'https://i.imgur.com/qVkj3iH.jpg',
           createdAt: new Date(),
           updatedAt: new Date()
         }, {
           name: 'Kobe Sticker',
           price: 2.50,
           category: 'Athletes',
-          imageURL: 'https://imgur.com/F1iPz5s',
+          imageURL: 'https://i.imgur.com/F1iPz5s.jpg',
           createdAt: new Date(),
           updatedAt: new Date()
         }, {
           name: 'Jordan Sticker',
           price: 3.00,
           category: 'Athletes',
-          imageURL: 'https://imgur.com/qUWouB3',
+          imageURL: 'https://i.imgur.com/qUWouB3.jpg',
           createdAt: new Date(),
           updatedAt: new Date()
         }, {
           name: '?(._.)? Sticker',
           price: 2.00,
           category: 'Memes',
-          imageURL: 'https://imgur.com/TALSkWQ',
+          imageURL: 'https://i.imgur.com/TALSkWQ.jpg',
           createdAt: new Date(),
           updatedAt: new Date()
         }, {
           name: 'Mike Wazoski Sticker',
           price: 2.00,
           category: 'Memes',
-          imageURL: 'https://imgur.com/SPD1Uw8',
+          imageURL: 'https://i.imgur.com/SPD1Uw8.jpg',
           createdAt: new Date(),
           updatedAt: new Date()
         }, {
-          name: 'Ben Tennyson Sticker',
+          name: 'Ben 10 Sticker',
           price: 2.50,
           category: 'Cartoon',
-          imageURL: 'https://imgur.com/Nlu8vsL',
+          imageURL: 'https://i.imgur.com/Nlu8vsL.jpg',
           createdAt: new Date(),
           updatedAt: new Date()
         }, {
           name: 'Ed, Edd n Eddy Sticker',
           price: 3.00,
           category: 'Cartoon',
-          imageURL: 'https://imgur.com/CPHzwDK',
+          imageURL: 'https://i.imgur.com/CPHzwDK.jpg',
           createdAt: new Date(),
           updatedAt: new Date()
         }, {
           name: 'Cat Sticker',
           price: 2.00,
           category: 'Random',
-          imageURL: 'https://imgur.com/IVZherg',
+          imageURL: 'https://i.imgur.com/IVZherg.jpg',
           createdAt: new Date(),
           updatedAt: new Date()
         }, {
           name: 'Rocket League car Sticker',
           price: 2.50,
           category: 'Random',
-          imageURL: 'https://imgur.com/Ybrm7sA',
+          imageURL: 'https://i.imgur.com/Ybrm7sA.jpg',
           createdAt: new Date(),
           updatedAt: new Date()
         }

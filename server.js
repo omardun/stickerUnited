@@ -38,10 +38,12 @@ app.get('/', async (req, res) => {
 });
 
 // Stickers Page
-app.get('/stickers', (req, res) => {
+app.get('/stickers', async (req, res) => {
+    const stickers = await db.Stickers.findAll()
     res.render('template', {
         locals: {
-            title: "Sticker United"
+            title: "Sticker United",
+            stickers 
         },
         partials: {
             head: '/partials/head',
