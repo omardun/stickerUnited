@@ -53,21 +53,6 @@ app.get('/stickers', async (req, res) => {
     });
 });
 
-// Single Sticker Page
-app.get('/stickers/:', (req, res) => {
-    res.render('template', {
-        locals: {
-            title: "Sticker United"
-        },
-        partials: {
-            head: '/partials/head',
-            header: '/partials/header',
-            component: '/partials/singleSticker',
-        }
-    });
-});
-
-
 
 // Login Page
 app.get('/login', (req, res) => {
