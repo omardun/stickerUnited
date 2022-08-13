@@ -37,7 +37,7 @@ app.get('/', async (req, res) => {
     });
 });
 
-// Stickers Page
+// All Stickers Page
 app.get('/stickers', async (req, res) => {
     const stickers = await db.Stickers.findAll()
     res.render('template', {
@@ -53,6 +53,53 @@ app.get('/stickers', async (req, res) => {
     });
 });
 
+// Memes Stickers Page
+app.get('/memes', async (req, res) => {
+    const stickers = await db.Stickers.findAll()
+    res.render('template', {
+        locals: {
+            title: "Sticker United",
+            stickers 
+        },
+        partials: {
+            head: '/partials/head',
+            header: '/partials/header',
+            component: '/partials/memes',
+        }
+    });
+});
+
+// Cartoons Stickers Page
+app.get('/cartoons', async (req, res) => {
+    const stickers = await db.Stickers.findAll()
+    res.render('template', {
+        locals: {
+            title: "Sticker United",
+            stickers 
+        },
+        partials: {
+            head: '/partials/head',
+            header: '/partials/header',
+            component: '/partials/cartoons',
+        }
+    });
+});
+
+// Random Stickers Page
+app.get('/random', async (req, res) => {
+    const stickers = await db.Stickers.findAll()
+    res.render('template', {
+        locals: {
+            title: "Sticker United",
+            stickers 
+        },
+        partials: {
+            head: '/partials/head',
+            header: '/partials/header',
+            component: '/partials/random',
+        }
+    });
+});
 
 // Login Page
 app.get('/login', (req, res) => {
