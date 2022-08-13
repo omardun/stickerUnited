@@ -156,11 +156,6 @@ h1 {
 
 
 /* stickers page */
-.stickers-cont {
-  padding-left: 55px;
-  padding-right: 55px;
-}
-
 .sticker-page-title {
   text-align: center;
 }
@@ -192,7 +187,7 @@ h1 {
 
 #star {
 display: inline;
-margin-left: 199px;
+margin-left: 10px;
 cursor: pointer;
 color: rgb(166, 166, 166);
 

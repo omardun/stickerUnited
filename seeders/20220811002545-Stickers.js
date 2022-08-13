@@ -83,7 +83,7 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date()
         }, {
-          name: 'Rocket League car Sticker',
+          name: 'Race Car Sticker',
           price: 2.50,
           category: 'Random',
           imageURL: 'https://i.imgur.com/Ybrm7sA.jpg',
