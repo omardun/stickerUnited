@@ -4,7 +4,7 @@
   padding: 0;
 }
 
-/* Header */
+/* Header & Navbar*/
 a, a:hover, a:focus, a:active {
   text-decoration: none;
   color: inherit;
@@ -55,6 +55,11 @@ a, a:hover, a:focus, a:active {
   width: 100%;
   padding: 0.4em 0.8em;
   border-radius: 5px;
+  
+}
+
+#navbar-img {
+  margin-left: 10px;
 }
 
 .navbar-link:is(:focus, :hover) {
@@ -130,9 +135,10 @@ a, a:hover, a:focus, a:active {
   align-items: center;
   padding-left: 0 !important;
   width: 100%;
+  
 }
 
-/* shop now section (main page)*/
+/* Home Page */
 h1 {
   text-align: center;
 }
@@ -141,19 +147,20 @@ h1 {
   flex-wrap: wrap;
   padding: 10px;
 }
+
 .product-card {
   flex: 1 20%;
   text-align: center;
   margin-bottom: 25px;
 }
+
 .product-card img {
   margin-bottom: 15px;
   width: 300px;
   height: 300px;
 }
 
-
-/* stickers page */
+/* Stickers Page */
 .sticker-page-title {
   text-align: center;
   font-size: 50px;
@@ -192,7 +199,7 @@ color: rgb(166, 166, 166);
 
 }
 
-
+/* Media Queries */
 @media only screen and (max-width: 360px) {
   #navbar-menu {
     bottom: 90%;
@@ -222,7 +229,6 @@ color: rgb(166, 166, 166);
   }
 
 }
-
 
 @media only screen and (min-width: 768px) {
   #navbar-menu {

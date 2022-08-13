@@ -101,6 +101,7 @@ app.get('/random', async (req, res) => {
         }
     });
 });
+
 // Sports Stickers Page
 app.get('/sports', async (req, res) => {
     const stickers = await db.Sticker.findAll()
@@ -116,8 +117,8 @@ app.get('/sports', async (req, res) => {
         }
     });
 });
-// Artists Stickers Page
 
+// Artists Stickers Page
 app.get('/artists', async (req, res) => {
     const stickers = await db.Sticker.findAll()
     res.render('template', {
@@ -132,6 +133,7 @@ app.get('/artists', async (req, res) => {
         }
     });
 });
+
 // Athletes Stickers Page
 app.get('/athletes', async (req, res) => {
     const stickers = await db.Sticker.findAll()
@@ -147,6 +149,7 @@ app.get('/athletes', async (req, res) => {
         }
     });
 });
+
 // All Stickers Page
 app.get('/stickers', async (req, res) => {
     const stickers = await db.Sticker.findAll()
@@ -159,6 +162,22 @@ app.get('/stickers', async (req, res) => {
             head: '/partials/head',
             header: '/partials/header',
             component: '/partials/stickers',
+        }
+    });
+});
+
+// Favorites Page
+app.get('/favorites', async (req, res) => {
+    const stickers = await db.Stickers.findAll()
+    res.render('template', {
+        locals: {
+            title: "Sticker United",
+            stickers 
+        },
+        partials: {
+            head: '/partials/head',
+            header: '/partials/header',
+            component: '/partials/favorites',
         }
     });
 });
@@ -259,7 +278,7 @@ app.get('/login', (req, res) => {
 
 
 // Contact Us Page
-app.get('/contactUs', (req, res) => {
+app.get('/contact', (req, res) => {
     res.render('template', {
         locals: {
             title: "Sticker United"
@@ -267,7 +286,7 @@ app.get('/contactUs', (req, res) => {
         partials: {
             head: '/partials/head',
             header: '/partials/header',
-            component: '/partials/contactUs',
+            component: '/partials/contact',
         }
     });
 });
