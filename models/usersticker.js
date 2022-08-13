@@ -1,18 +1,23 @@
 'use strict';
-const { Model } = require('sequelize');
-
+const {
+  Model
+} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class UserStickers extends Model {  }
-  UserStickers.init(
+  class UserSticker extends Model {
+
+    static associate(models) {
+    }
+  }
+  UserSticker.init(
     {
-      userID: {
+      userId: {
         type: DataTypes.INTEGER,
         references: {
           model: 'Users',
           key: 'id',
         },
       },
-      strickersID: {
+      stickerId: {
         type: DataTypes.INTEGER,
         references: {
           model: 'Stickers',
@@ -22,8 +27,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'UserStickers',
+      modelName: 'UserSticker',
     }
   );
-  return UserStickers;
+  return UserSticker;
 };

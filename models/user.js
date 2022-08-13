@@ -7,13 +7,12 @@ module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     
     static associate(models) {
-      User.belongsToMany(models.Stickers, {
-        as: 'stocks',
-        through: models.UserStickers,
+      User.belongsToMany(models.Sticker, {
+        as: 'stickers',
+        through: models.UserSticker,
         foreignKey: 'userId',
-        otherKey: 'stickerId'
-      });
-     }
+        otherKey: 'stickerId',
+      });    }
   }
   User.init({
     email: DataTypes.STRING,
