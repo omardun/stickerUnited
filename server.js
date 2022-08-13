@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname,'public')));
 
 // Homepage
 app.get('/', async (req, res) => {
-    const stickers = await db.Stickers.findAll()
+    const stickers = await db.Sticker.findAll()
     res.render('template', {
         locals: {
             title: "Sticker United",
@@ -39,7 +39,7 @@ app.get('/', async (req, res) => {
 
 // All Stickers Page
 app.get('/stickers', async (req, res) => {
-    const stickers = await db.Stickers.findAll()
+    const stickers = await db.Sticker.findAll()
     res.render('template', {
         locals: {
             title: "Sticker United",
@@ -55,7 +55,7 @@ app.get('/stickers', async (req, res) => {
 
 // Memes Stickers Page
 app.get('/memes', async (req, res) => {
-    const stickers = await db.Stickers.findAll()
+    const stickers = await db.Sticker.findAll()
     res.render('template', {
         locals: {
             title: "Sticker United",
@@ -71,7 +71,7 @@ app.get('/memes', async (req, res) => {
 
 // Cartoons Stickers Page
 app.get('/cartoons', async (req, res) => {
-    const stickers = await db.Stickers.findAll()
+    const stickers = await db.Sticker.findAll()
     res.render('template', {
         locals: {
             title: "Sticker United",
@@ -87,7 +87,7 @@ app.get('/cartoons', async (req, res) => {
 
 // Random Stickers Page
 app.get('/random', async (req, res) => {
-    const stickers = await db.Stickers.findAll()
+    const stickers = await db.Sticker.findAll()
     res.render('template', {
         locals: {
             title: "Sticker United",
@@ -103,7 +103,7 @@ app.get('/random', async (req, res) => {
 
 // Sports Stickers Page
 app.get('/sports', async (req, res) => {
-    const stickers = await db.Stickers.findAll()
+    const stickers = await db.Sticker.findAll()
     res.render('template', {
         locals: {
             title: "Sticker United",
@@ -119,7 +119,7 @@ app.get('/sports', async (req, res) => {
 
 // Artists Stickers Page
 app.get('/artists', async (req, res) => {
-    const stickers = await db.Stickers.findAll()
+    const stickers = await db.Sticker.findAll()
     res.render('template', {
         locals: {
             title: "Sticker United",
@@ -135,7 +135,7 @@ app.get('/artists', async (req, res) => {
 
 // Athletes Stickers Page
 app.get('/athletes', async (req, res) => {
-    const stickers = await db.Stickers.findAll()
+    const stickers = await db.Sticker.findAll()
     res.render('template', {
         locals: {
             title: "Sticker United",
@@ -151,7 +151,7 @@ app.get('/athletes', async (req, res) => {
 
 // All Stickers Page
 app.get('/stickers', async (req, res) => {
-    const stickers = await db.Stickers.findAll()
+    const stickers = await db.Sticker.findAll()
     res.render('template', {
         locals: {
             title: "Sticker United",

@@ -4,14 +4,14 @@ module.exports = {
     await queryInterface.createTable(
       'UserStickers',
       {
-        userID: {
+        userId: {
           type: Sequelize.INTEGER,
           references: {
             model: 'Users',
             key: 'id',
           },
         },
-        strickersID: {
+        stickerId: {
           type: Sequelize.INTEGER,
           references: {
             model: 'Stickers',
