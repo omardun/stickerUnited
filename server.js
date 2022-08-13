@@ -100,6 +100,70 @@ app.get('/random', async (req, res) => {
         }
     });
 });
+// Sports Stickers Page
+app.get('/sports', async (req, res) => {
+    const stickers = await db.Stickers.findAll()
+    res.render('template', {
+        locals: {
+            title: "Sticker United",
+            stickers 
+        },
+        partials: {
+            head: '/partials/head',
+            header: '/partials/header',
+            component: '/partials/sports',
+        }
+    });
+});
+// Artists Stickers Page
+
+app.get('/artists', async (req, res) => {
+    const stickers = await db.Stickers.findAll()
+    res.render('template', {
+        locals: {
+            title: "Sticker United",
+            stickers 
+        },
+        partials: {
+            head: '/partials/head',
+            header: '/partials/header',
+            component: '/partials/artists',
+        }
+    });
+});
+// Athletes Stickers Page
+app.get('/athletes', async (req, res) => {
+    const stickers = await db.Stickers.findAll()
+    res.render('template', {
+        locals: {
+            title: "Sticker United",
+            stickers 
+        },
+        partials: {
+            head: '/partials/head',
+            header: '/partials/header',
+            component: '/partials/athletes',
+        }
+    });
+});
+// All Stickers Page
+app.get('/stickers', async (req, res) => {
+    const stickers = await db.Stickers.findAll()
+    res.render('template', {
+        locals: {
+            title: "Sticker United",
+            stickers 
+        },
+        partials: {
+            head: '/partials/head',
+            header: '/partials/header',
+            component: '/partials/stickers',
+        }
+    });
+});
+
+
+
 
 // Login Page
 app.get('/login', (req, res) => {
