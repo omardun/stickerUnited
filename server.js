@@ -168,7 +168,7 @@ app.get('/stickers', async (req, res) => {
 
 // Favorites Page
 app.get('/favorites', async (req, res) => {
-    const stickers = await db.Stickers.findAll()
+    const stickers = await db.Sticker.findAll()
     res.render('template', {
         locals: {
             title: "Sticker United",
