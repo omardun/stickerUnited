@@ -10,6 +10,7 @@ const path = require('path');
 
 
 const es6Renderer = require('express-es6-template-engine');
+const { REPL_MODE_SLOPPY } = require('repl');
 app.engine('html', es6Renderer);
 app.set('views', 'templates');
 app.set('view engine', 'html');
@@ -67,6 +68,69 @@ app.get('/login', (req, res) => {
         }
     });
 });
+
+app.post('/login', (req, res) => 
+{
+    const newEmail = req.body.newEmail.toLowerCase()
+    const newPassword = req.body.newPassword
+    const newPasswordCheck = req.body.newPasswordCheck
+    const email = req.body.email.toLowerCase()
+    const password = req.body.password
+    
+    models.User.findAll({
+        where: { newEmail: newEmail }
+    }).then((users) => 
+    {
+        
+        const newUser = users.find(user => {
+            return user.newEmail == newEmail
+        })
+        if (newUser) {
+            res.render('register', {message: 0})
+        } else {
+            if (newPassword == newPasswordCheck) {
+                bcrypt.genSalt(10, function (err, salt) {
+                    bcrypt.hash(password, salt, function (err, hash) {
+                        let user = models.User.build ({
+                            newEmail: newEmail,
+                            newPassword: hash,
+                        })
+                        user.save().then(() => {
+                            res.redirect('login')
+                        })
+                    })
+                })
+            } else {
+                res.render('register', {message: 1 })
+            }
+        }
+    })
+
+
+
+
+
+
+    
+
+
+
+    models.User.findAll({
+        where: { email: email }
+    }).then((users) => {
+        const currentUser = users.find(user => {
+            return user.username == username
+        })
+        if (currentUser) {
+            bcrypt.compare(password, currentUser.password, function (err, result) {
+                if (result) {
+                    req.session.name 
+                }
+            })
+        }
+    })
+
+})
 
 // Contact Us Page
 app.get('/contactUs', (req, res) => {

@@ -1,13 +1,8 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
-  class UserStickers extends Model {
+const { Model } = require('sequelize');
 
-    static associate(models) {
-    }
-  }
+module.exports = (sequelize, DataTypes) => {
+  class UserStickers extends Model {  }
   UserStickers.init(
     {
       userID: {
