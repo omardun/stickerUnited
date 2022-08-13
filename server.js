@@ -55,7 +55,7 @@ app.get('/stickers', async (req, res) => {
 });
 
 
-// Login Page
+// Register Page
 app.get('/login', (req, res) => {
     res.render('template', {
         locals: {
@@ -69,19 +69,17 @@ app.get('/login', (req, res) => {
     });
 });
 
-app.post('/login', (req, res) => 
+//Register Post
+app.post('/register', (req, res) => 
 {
     const newEmail = req.body.newEmail.toLowerCase()
     const newPassword = req.body.newPassword
     const newPasswordCheck = req.body.newPasswordCheck
-    const email = req.body.email.toLowerCase()
-    const password = req.body.password
     
     models.User.findAll({
         where: { newEmail: newEmail }
     }).then((users) => 
     {
-        
         const newUser = users.find(user => {
             return user.newEmail == newEmail
         })
@@ -105,32 +103,52 @@ app.post('/login', (req, res) =>
             }
         }
     })
+})
 
+// Login Page
+app.get('/login', (req, res) => {
+    res.render('template', {
+        locals: {
+            title: "Sticker United"
+        },
+        partials: {
+            head: '/partials/head',
+            header: '/partials/header',
+            component: '/partials/login',
+        }
+    });
+});
 
-
-
-
-
-    
-
-
+//Login Post
+    app.post('/login', (req, res) => 
+    {
+        const email = req.body.email.toLowerCase()
+        const password = req.body.password
 
     models.User.findAll({
         where: { email: email }
     }).then((users) => {
         const currentUser = users.find(user => {
-            return user.username == username
+            return user.email == email
         })
         if (currentUser) {
             bcrypt.compare(password, currentUser.password, function (err, result) {
                 if (result) {
-                    req.session.name 
+                    req.session.name = req.body.email
+                    req.session.username = currentUser.dataValues.id
+                    res.redirect('/home')
+                }
+                else {
+                    res.render('home', {message: 0})
                 }
             })
         }
+        else {
+            res.render('login', {message: 1})
+        }
     })
-
 })
+
 
 // Contact Us Page
 app.get('/contactUs', (req, res) => {
