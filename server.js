@@ -164,7 +164,7 @@ app.get('/stickers', async (req, res) => {
 });
 
 // Register Page
-app.get('/login', (req, res) => {
+app.get('/register', (req, res) => {
     res.render('template', {
         locals: {
             title: "Sticker United"

@@ -14,7 +14,8 @@ module.exports = (sequelize, DataTypes) => {
         otherKey: 'stickerId',
       });    }
   }
-  User.init({
+  User.init(
+    {
     email: DataTypes.STRING,
     password: DataTypes.STRING
   }, 
