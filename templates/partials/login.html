@@ -1,34 +1,19 @@
-<h1>Create an Account</h1>
-<form onsubmit="return false"></form>
-<div class="create" id="create">
-    <input type="text" placeholder="Enter your first name" id="newFirstName" />
-    <br><br>
-    <input type="text" placeholder="Enter your last name" id="newLastName" />
-    <br><br>
-    <input type="email" placeholder="Enter your email" id="newEmail" />
-    <br><br>
-    <input type="password" placeholder="Enter password" id="newPassword" />&nbsp;&nbsp;&nbsp;
-    <input type="password" placeholder="Enter password (confirm)" id="newPasswordCheck" />
-    <br><br>
-
-    <button onclick="createAccount();">Create Account</button>
-    <div class="create"></div>
-
-</div>
-
 
 <h2>Login</h2>
 <form onsubmit="return false"></form>
 <div class="login" id="login">
-    <input type="text" placeholder="Enter your first name" id="firstName" />
-    <br><br>
-    <input type="text" placeholder="Enter your last name" id="lastName" />
-    <br><br>
+    
     <input type="email" placeholder="Enter your email" id="email" />
     <br><br>
     <input type="password" placeholder="Enter password" id="password" />&nbsp;&nbsp;&nbsp;
     <br><br>
 
-    <button onclick="login();">Login</button>
+    <button>Login</button>
     <div class="login"></div>
+
+    <div>Not Yet a User?</div>
+<a href="/register">  
+    <button>Register</button>  
+  </a>
 </div>
+<script src="/scripts/login.js"></script>

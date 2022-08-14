@@ -1,21 +1,18 @@
 const http = require('http');
-
 const hostname = '127.0.0.1';
 const port = 3000;
 const db = require('./models')  
-
 const express = require('express');
 const app = express();
 const path = require('path');
-
-
 const es6Renderer = require('express-es6-template-engine');
-const { REPL_MODE_SLOPPY } = require('repl');
+const server = http.createServer(app);
+const session = require('express-session')
+
 app.engine('html', es6Renderer);
 app.set('views', 'templates');
 app.set('view engine', 'html');
 
-const server = http.createServer(app);
 
 // Routes
 app.use(express.static(path.join(__dirname,'public')));
@@ -191,7 +188,7 @@ app.get('/register', (req, res) => {
         partials: {
             head: '/partials/head',
             header: '/partials/header',
-            component: '/partials/login',
+            component: '/partials/register',
         }
     });
 });
@@ -263,7 +260,7 @@ app.get('/login', (req, res) => {
                 if (result) {
                     req.session.name = req.body.email
                     req.session.username = currentUser.dataValues.id
-                    res.redirect('/home')
+                    res.redirect('/')
                 }
                 else {
                     res.render('home', {message: 0})
