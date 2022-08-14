@@ -138,6 +138,13 @@ a, a:hover, a:focus, a:active {
   
 }
 
+/* Login Page */
+.login-container,
+.register-container {
+  margin: 5rem auto;
+  width: 500px;
+}
+
 /* Home Page */
 h1 {
   text-align: center;
