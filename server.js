@@ -21,12 +21,9 @@ app.get("/", async (req, res) => {
   const stickers = await db.Sticker.findAll();
   res.render("template", {
     locals: {
-      title: "Sticker United",
       stickers,
     },
     partials: {
-      head: "/partials/head",
-      header: "/partials/header",
       component: "/partials/home",
     },
   });
@@ -37,12 +34,9 @@ app.get("/stickers", async (req, res) => {
   const stickers = await db.Sticker.findAll();
   res.render("template", {
     locals: {
-      title: "Sticker United",
       stickers,
     },
     partials: {
-      head: "/partials/head",
-      header: "/partials/header",
       component: "/partials/stickers",
     },
   });
@@ -53,12 +47,9 @@ app.get("/memes", async (req, res) => {
   const stickers = await db.Sticker.findAll();
   res.render("template", {
     locals: {
-      title: "Sticker United",
       stickers,
     },
     partials: {
-      head: "/partials/head",
-      header: "/partials/header",
       component: "/partials/memes",
     },
   });
@@ -69,12 +60,9 @@ app.get("/cartoons", async (req, res) => {
   const stickers = await db.Sticker.findAll();
   res.render("template", {
     locals: {
-      title: "Sticker United",
       stickers,
     },
     partials: {
-      head: "/partials/head",
-      header: "/partials/header",
       component: "/partials/cartoons",
     },
   });
@@ -85,12 +73,9 @@ app.get("/random", async (req, res) => {
   const stickers = await db.Sticker.findAll();
   res.render("template", {
     locals: {
-      title: "Sticker United",
       stickers,
     },
     partials: {
-      head: "/partials/head",
-      header: "/partials/header",
       component: "/partials/random",
     },
   });
@@ -101,12 +86,9 @@ app.get("/sports", async (req, res) => {
   const stickers = await db.Sticker.findAll();
   res.render("template", {
     locals: {
-      title: "Sticker United",
       stickers,
     },
     partials: {
-      head: "/partials/head",
-      header: "/partials/header",
       component: "/partials/sports",
     },
   });
@@ -117,12 +99,9 @@ app.get("/artists", async (req, res) => {
   const stickers = await db.Sticker.findAll();
   res.render("template", {
     locals: {
-      title: "Sticker United",
       stickers,
     },
     partials: {
-      head: "/partials/head",
-      header: "/partials/header",
       component: "/partials/artists",
     },
   });
@@ -133,12 +112,9 @@ app.get("/athletes", async (req, res) => {
   const stickers = await db.Sticker.findAll();
   res.render("template", {
     locals: {
-      title: "Sticker United",
       stickers,
     },
     partials: {
-      head: "/partials/head",
-      header: "/partials/header",
       component: "/partials/athletes",
     },
   });
@@ -149,29 +125,23 @@ app.get("/stickers", async (req, res) => {
   const stickers = await db.Sticker.findAll();
   res.render("template", {
     locals: {
-      title: "Sticker United",
       stickers,
     },
     partials: {
-      head: "/partials/head",
-      header: "/partials/header",
       component: "/partials/stickers",
     },
   });
 });
 
-// Favorites Page
-app.get("/favorites", async (req, res) => {
+// User Page
+app.get("/user", async (req, res) => {
   const stickers = await db.Sticker.findAll();
   res.render("template", {
     locals: {
-      title: "Sticker United",
       stickers,
     },
     partials: {
-      head: "/partials/head",
-      header: "/partials/header",
-      component: "/partials/favorites",
+      component: "/partials/user",
     },
   });
 });
@@ -180,11 +150,8 @@ app.get("/favorites", async (req, res) => {
 app.get("/register", (req, res) => {
   res.render("template", {
     locals: {
-      title: "Sticker United",
     },
     partials: {
-      head: "/partials/head",
-      header: "/partials/header",
       component: "/partials/register",
     },
   });
@@ -228,11 +195,8 @@ app.post("/register", (req, res) => {
 app.get("/login", (req, res) => {
   res.render("template", {
     locals: {
-      title: "Sticker United",
     },
     partials: {
-      head: "/partials/head",
-      header: "/partials/header",
       component: "/partials/login",
     },
   });

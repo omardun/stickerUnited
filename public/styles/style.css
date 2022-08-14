@@ -4,139 +4,21 @@
   padding: 0;
 }
 
+.container {
+  padding-top: 30px;
+}
+
 /* Header & Navbar*/
 a, a:hover, a:focus, a:active {
   text-decoration: none;
   color: inherit;
 }
 
-.fs-1 {
+.navbar-brand {
+  font-size: 35px;
   font-weight: bold;
 }
 
-:root {
-  --navbar-bg-color: #fff;
-  --navbar-text-color: #000;
-  --navbar-text-color-focus: #000;
-  --navbar-bg-contrast: #fff;
-}
-
-#navbar {
-  --navbar-height: 70px;
-  position: relative;
-  height: var(--navbar-height);
-  background-color: var(--navbar-bg-color);
-  left: 0;
-  right: 0;
-}
-
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  height: 100%;
-  align-items: center;
-}
-
-.navbar-item {
-  width: 100%;
-}
-
-.home-link,
-.navbar-link {
-  color: var(--navbar-text-color);
-  text-decoration: none;
-  display: flex;
-  font-weight: 400;
-  align-items: center;
-}
-
-.navbar-link {
-  justify-content: center;
-  width: 100%;
-  padding: 0.4em 0.8em;
-  border-radius: 5px;
-  
-}
-
-#navbar-img {
-  margin-left: 10px;
-}
-
-.navbar-link:is(:focus, :hover) {
-  color: var(--navbar-text-color-focus);
-  background-color: var(--navbar-bg-contrast);
-}
-
-#navbar-toggle {
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.icon-bar {
-  display: block;
-  width: 25px;
-  height: 4px;
-  margin: 2px;
-  background-color: var(--navbar-text-color);
-}
-
-#navbar-toggle:is(:focus, :hover) .icon-bar {
-  background-color: var(--navbar-text-color-focus);
-}
-
-#navbar-toggle[aria-expanded="true"] .icon-bar:is(:first-child, :last-child) {
-  position: absolute;
-  margin: 0;
-  width: 30px;
-}
-
-#navbar-toggle[aria-expanded="true"] .icon-bar:first-child {
-  transform: rotate(45deg);
-}
-
-#navbar-toggle[aria-expanded="true"] .icon-bar:nth-child(2) {
-  opacity: 0;
-}
-
-#navbar-toggle[aria-expanded="true"] .icon-bar:last-child {
-  transform: rotate(-45deg);
-}
-
-#navbar-menu {
-  position: fixed;
-  top: 64px;
-  bottom: 75%;
-  opacity: 0;
-  visibility: hidden;
-  left: 0;
-  right: 0;
-}
-
-#navbar-toggle[aria-expanded="true"] + #navbar-menu {
-  background-color: #fff;
-  opacity: 1;
-  visibility: visible;
-}
-
-.navbar-links {
-  list-style: none;
-  position: absolute;
-  left: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-left: 0 !important;
-  width: 100%;
-  
-}
 
 /* Login Page */
 .login-container,
@@ -148,7 +30,9 @@ a, a:hover, a:focus, a:active {
 /* Home Page */
 h1 {
   text-align: center;
+  font-size: 50px;
 }
+
 .product-container {
   display: flex;
   flex-wrap: wrap;
@@ -166,6 +50,12 @@ h1 {
   width: 300px;
   height: 300px;
 }
+
+.product-title {
+  font-size: 35px;
+  margin-top: 0.25em;
+}
+
 
 /* Stickers Page */
 .sticker-page-title {
@@ -208,14 +98,6 @@ color: rgb(166, 166, 166);
 
 /* Media Queries */
 @media only screen and (max-width: 360px) {
-  #navbar-menu {
-    bottom: 90%;
-  }
-
-  .container {
-    padding-top: 60px;
-  }
-
   .sticker-gallery {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -223,14 +105,6 @@ color: rgb(166, 166, 166);
 }
 
 @media only screen and (min-width: 360px) {
-  #navbar-menu {
-    bottom: 90%;
-  }
-
-  .container {
-    padding-top: 60px;
-  }
-
   .sticker-gallery {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -238,14 +112,6 @@ color: rgb(166, 166, 166);
 }
 
 @media only screen and (min-width: 768px) {
-  #navbar-menu {
-    bottom: 90%;
-  }
-
-  .container {
-    padding-top: 60px;
-  }
-
   .sticker-gallery {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -256,28 +122,4 @@ color: rgb(166, 166, 166);
     grid-template-columns: repeat(3, 1fr);
   }
 
-  #navbar-toggle {
-    display: none;
-  }
-
-  #navbar-menu,
-  #navbar-toggle[aria-expanded='true'] + #navbar-menu {
-    visibility: visible;
-    opacity: 1;
-    position: static;
-    display: block;
-    height: 100%;
-  }
-
-  .navbar-links,
-  #navbar-toggle[aria-expanded='true'] + #navbar-menu .navbar-links {
-    margin: 0;
-    padding: 0;
-    box-shadow: none;
-    position: static;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-  }
 }
