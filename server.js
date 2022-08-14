@@ -190,39 +190,39 @@ app.get("/register", (req, res) => {
   });
 });
 
-// //Register Post
-// app.post("/register", (req, res) => {
-//   const newEmail = req.body.newEmail.toLowerCase();
-//   const newPassword = req.body.newPassword;
-//   const newPasswordCheck = req.body.newPasswordCheck;
+//Register Post
+app.post("/register", (req, res) => {
+  const newEmail = req.body.newEmail.toLowerCase();
+  const newPassword = req.body.newPassword;
+  const newPasswordCheck = req.body.newPasswordCheck;
 
-//   models.User.findAll({
-//     where: { newEmail: newEmail },
-//   }).then((users) => {
-//     const newUser = users.find((user) => {
-//       return user.newEmail == newEmail;
-//     });
-//     if (newUser) {
-//       res.render("register", { message: 0 });
-//     } else {
-//       if (newPassword == newPasswordCheck) {
-//         bcrypt.genSalt(10, function (err, salt) {
-//           bcrypt.hash(password, salt, function (err, hash) {
-//             let user = models.User.build({
-//               newEmail: newEmail,
-//               newPassword: hash,
-//             });
-//             user.save().then(() => {
-//               res.redirect("login");
-//             });
-//           });
-//         });
-//       } else {
-//         res.render("register", { message: 1 });
-//       }
-//     }
-//   });
-// });
+  models.User.findAll({
+    where: { newEmail: newEmail },
+  }).then((users) => {
+    const newUser = users.find((user) => {
+      return user.newEmail == newEmail;
+    });
+    if (newUser) {
+      res.render("register", { message: 0 });
+    } else {
+      if (newPassword == newPasswordCheck) {
+        bcrypt.genSalt(10, function (err, salt) {
+          bcrypt.hash(password, salt, function (err, hash) {
+            let user = models.User.build({
+              newEmail: newEmail,
+              newPassword: hash,
+            });
+            user.save().then(() => {
+              res.redirect("login");
+            });
+          });
+        });
+      } else {
+        res.render("register", { message: 1 });
+      }
+    }
+  });
+});
 
 // Login Page
 app.get("/login", (req, res) => {
@@ -238,32 +238,32 @@ app.get("/login", (req, res) => {
   });
 });
 
-// //Login Post
-// app.post("/login", (req, res) => {
-//   const email = req.body.email.toLowerCase();
-//   const password = req.body.password;
+//Login Post
+app.post("/login", (req, res) => {
+  const email = req.body.email.toLowerCase();
+  const password = req.body.password;
 
-//   models.User.findAll({
-//     where: { email: email },
-//   }).then((users) => {
-//     const currentUser = users.find((user) => {
-//       return user.email == email;
-//     });
-//     if (currentUser) {
-//       bcrypt.compare(password, currentUser.password, function (err, result) {
-//         if (result) {
-//           req.session.name = req.body.email;
-//           req.session.username = currentUser.dataValues.id;
-//           res.redirect("/");
-//         } else {
-//           res.render("home", { message: 0 });
-//         }
-//       });
-//     } else {
-//       res.render("login", { message: 1 });
-//     }
-//   });
-// });
+  models.User.findAll({
+    where: { email: email },
+  }).then((users) => {
+    const currentUser = users.find((user) => {
+      return user.email == email;
+    });
+    if (currentUser) {
+      bcrypt.compare(password, currentUser.password, function (err, result) {
+        if (result) {
+          req.session.name = req.body.email;
+          req.session.username = currentUser.dataValues.id;
+          res.redirect("/");
+        } else {
+          res.render("home", { message: 0 });
+        }
+      });
+    } else {
+      res.render("login", { message: 1 });
+    }
+  });
+});
 
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
