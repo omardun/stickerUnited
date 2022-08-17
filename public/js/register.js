@@ -1,5 +1,7 @@
+
 const newEmailEl = document.querySelector('#newEmail');
 const newPasswordEl = document.querySelector('#newPassword');
+const newPasswordCheckEl = document.querySelector('#newPasswordcheck');
 const createEl = document.querySelector('button');
 
 const handleRegister = async (payload) => {
@@ -25,9 +27,12 @@ createEl.addEventListener('click', (event) => {
 
   const newEmail = newEmailEl.value;
   const newPassword = newPasswordEl.value;
+  const newPasswordCheck = newPasswordCheckEl.value;
   const payload = {
+  
     newEmail,
     newPassword,
+    newPasswordcheck,
   };
 
   handleRegister(payload);

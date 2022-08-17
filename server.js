@@ -121,28 +121,15 @@ app.get("/", async (req, res) => {
     });
   });
   
-  // All Stickers Page
-  app.get("/stickers", async (req, res) => {
-    const stickers = await db.Sticker.findAll();
-    res.render("template", {
-      locals: {
-        stickers,
-      },
-      partials: {
-        component: "/partials/stickers",
-      },
-    });
-  });
-  
   // User Page
-  app.get("/user", async (req, res) => {
+  app.get("/my-stickers", async (req, res) => {
     const stickers = await db.Sticker.findAll();
     res.render("template", {
       locals: {
         stickers,
       },
       partials: {
-        component: "/partials/user",
+        component: "/partials/my-stickers",
       },
     });
   });
