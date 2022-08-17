@@ -9,7 +9,6 @@ const es6Renderer = require("express-es6-template-engine");
 const server = http.createServer(app);
 const session = require('express-session')
 
-
 app.engine('html', es6Renderer);
 app.set('views', 'templates');
 app.set('view engine', 'html');
@@ -18,208 +17,180 @@ app.use(express.json());
 // Routes
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 // Homepage
 app.get("/", async (req, res) => {
-  const stickers = await db.Sticker.findAll();
-  res.render("template", {
-    locals: {
-      stickers,
-    },
-    partials: {
-      component: "/partials/home",
-    },
+    const stickers = await db.Sticker.findAll();
+    res.render("template", {
+      locals: {
+        stickers,
+      },
+      partials: {
+        component: "/partials/home",
+      },
+    });
   });
-});
-
-// All Stickers Page
-app.get('/stickers', async (req, res) => {
-    const stickers = await db.Sticker.findAll()
-    res.render('template', {
-        locals: {
-            title: "Sticker United",
-            stickers
-        },
-        partials: {
-            head: '/partials/head',
-            header: '/partials/header',
-            component: '/partials/stickers',
-        }
+  
+  // All Stickers Page
+  app.get("/stickers", async (req, res) => {
+    const stickers = await db.Sticker.findAll();
+    res.render("template", {
+      locals: {
+        stickers,
+      },
+      partials: {
+        component: "/partials/stickers",
+      },
     });
-});
-
-// Memes Stickers Page
-app.get('/memes', async (req, res) => {
-    const stickers = await db.Sticker.findAll()
-    res.render('template', {
-        locals: {
-            title: "Sticker United",
-            stickers
-        },
-        partials: {
-            head: '/partials/head',
-            header: '/partials/header',
-            component: '/partials/memes',
-        }
-    });
-});
-
-// Cartoons Stickers Page
-app.get('/cartoons', async (req, res) => {
-    const stickers = await db.Sticker.findAll()
-    res.render('template', {
-        locals: {
-            title: "Sticker United",
-            stickers
-        },
-        partials: {
-            head: '/partials/head',
-            header: '/partials/header',
-            component: '/partials/cartoons',
-        }
-    });
-});
-
-// Random Stickers Page
-app.get('/random', async (req, res) => {
-    const stickers = await db.Sticker.findAll()
-    res.render('template', {
-        locals: {
-            title: "Sticker United",
-            stickers
-        },
-        partials: {
-            head: '/partials/head',
-            header: '/partials/header',
-            component: '/partials/random',
-        }
-    });
-});
-
-// Sports Stickers Page
-app.get('/sports', async (req, res) => {
-    const stickers = await db.Sticker.findAll()
-    res.render('template', {
-        locals: {
-            title: "Sticker United",
-            stickers
-        },
-        partials: {
-            head: '/partials/head',
-            header: '/partials/header',
-            component: '/partials/sports',
-        }
-    });
-});
-
-// Artists Stickers Page
-app.get('/artists', async (req, res) => {
-    const stickers = await db.Sticker.findAll()
-    res.render('template', {
-        locals: {
-            title: "Sticker United",
-            stickers
-        },
-        partials: {
-            head: '/partials/head',
-            header: '/partials/header',
-            component: '/partials/artists',
-        }
-    });
-});
-
-// Athletes Stickers Page
-app.get('/athletes', async (req, res) => {
-    const stickers = await db.Sticker.findAll()
-    res.render('template', {
-        locals: {
-            title: "Sticker United",
-            stickers
-        },
-        partials: {
-            head: '/partials/head',
-            header: '/partials/header',
-            component: '/partials/athletes',
-        }
-    });
-});
-
-// All Stickers Page
-app.get('/stickers', async (req, res) => {
-    const stickers = await db.Sticker.findAll()
-    res.render('template', {
-        locals: {
-            title: "Sticker United",
-            stickers
-        },
-        partials: {
-            head: '/partials/head',
-            header: '/partials/header',
-            component: '/partials/stickers',
-        }
-    });
-});
-
-// Favorites Page
-app.get('/favorites', async (req, res) => {
-    const stickers = await db.Sticker.findAll()
-    res.render('template', {
-        locals: {
-            title: "Sticker United",
-            stickers
-        },
-        partials: {
-            head: '/partials/head',
-            header: '/partials/header',
-            component: '/partials/favorites',
-        }
-    });
-});
-
-// Register Page
-app.get("/register", (req, res) => {
-  res.render("template", {
-    locals: {
-    },
-    partials: {
-      component: "/partials/register",
-    },
   });
-});
-
-//Register Post
-app.post('/register', (req, res) => {
-    const newEmail = req.body.newEmail.toLowerCase()
-    const newPassword = req.body.newPassword
-    const newPasswordCheck = req.body.newPasswordCheck
-
+  
+  // Memes Stickers Page
+  app.get("/memes", async (req, res) => {
+    const stickers = await db.Sticker.findAll();
+    res.render("template", {
+      locals: {
+        stickers,
+      },
+      partials: {
+        component: "/partials/memes",
+      },
+    });
+  });
+  
+  // Cartoons Stickers Page
+  app.get("/cartoons", async (req, res) => {
+    const stickers = await db.Sticker.findAll();
+    res.render("template", {
+      locals: {
+        stickers,
+      },
+      partials: {
+        component: "/partials/cartoons",
+      },
+    });
+  });
+  
+  // Random Stickers Page
+  app.get("/random", async (req, res) => {
+    const stickers = await db.Sticker.findAll();
+    res.render("template", {
+      locals: {
+        stickers,
+      },
+      partials: {
+        component: "/partials/random",
+      },
+    });
+  });
+  
+  // Sports Stickers Page
+  app.get("/sports", async (req, res) => {
+    const stickers = await db.Sticker.findAll();
+    res.render("template", {
+      locals: {
+        stickers,
+      },
+      partials: {
+        component: "/partials/sports",
+      },
+    });
+  });
+  
+  // Artists Stickers Page
+  app.get("/artists", async (req, res) => {
+    const stickers = await db.Sticker.findAll();
+    res.render("template", {
+      locals: {
+        stickers,
+      },
+      partials: {
+        component: "/partials/artists",
+      },
+    });
+  });
+  
+  // Athletes Stickers Page
+  app.get("/athletes", async (req, res) => {
+    const stickers = await db.Sticker.findAll();
+    res.render("template", {
+      locals: {
+        stickers,
+      },
+      partials: {
+        component: "/partials/athletes",
+      },
+    });
+  });
+  
+  // All Stickers Page
+  app.get("/stickers", async (req, res) => {
+    const stickers = await db.Sticker.findAll();
+    res.render("template", {
+      locals: {
+        stickers,
+      },
+      partials: {
+        component: "/partials/stickers",
+      },
+    });
+  });
+  
+  // User Page
+  app.get("/user", async (req, res) => {
+    const stickers = await db.Sticker.findAll();
+    res.render("template", {
+      locals: {
+        stickers,
+      },
+      partials: {
+        component: "/partials/user",
+      },
+    });
+  });
+  
+  // Register Page
+  app.get("/register", (req, res) => {
+    res.render("template", {
+      locals: {
+      },
+      partials: {
+        component: "/partials/register",
+      },
+    });
+  });
+  
+  //Register Post
+  app.post("/register", (req, res) => {
+    const newEmail = req.body.newEmail.toLowerCase();
+    const newPassword = req.body.newPassword;
+    const newPasswordCheck = req.body.newPasswordCheck;
+  
     models.User.findAll({
-        where: { newEmail: newEmail }
+      where: { newEmail: newEmail },
     }).then((users) => {
-        const newUser = users.find(user => {
-            return user.newEmail == newEmail
-        })
-        if (newUser) {
-            res.render('register', { message: 0 })
+      const newUser = users.find((user) => {
+        return user.newEmail == newEmail;
+      });
+      if (newUser) {
+        res.render("register", { message: 0 });
+      } else {
+        if (newPassword == newPasswordCheck) {
+          bcrypt.genSalt(10, function (err, salt) {
+            bcrypt.hash(password, salt, function (err, hash) {
+              let user = models.User.build({
+                newEmail: newEmail,
+                newPassword: hash,
+              });
+              user.save().then(() => {
+                res.redirect("login");
+              });
+            });
+          });
         } else {
-            if (newPassword == newPasswordCheck) {
-                bcrypt.genSalt(10, function (err, salt) {
-                    bcrypt.hash(password, salt, function (err, hash) {
-                        let user = models.User.build({
-                            newEmail: newEmail,
-                            newPassword: hash,
-                        })
-                        user.save().then(() => {
-                            res.redirect('login')
-                        })
-                    })
-                })
-            } else {
-                res.render('register', { message: 1 })
-            }
+          res.render("register", { message: 1 });
         }
-    })
-})
+      }
+    });
+  });
 
 // Login Page
 app.get("/login", (req, res) => {
@@ -255,22 +226,6 @@ console.log(email);
       }
    
 })
-
-
-
-// Contact Us Page
-app.get('/contact', (req, res) => {
-    res.render('template', {
-        locals: {
-            title: "Sticker United"
-        },
-        partials: {
-            head: '/partials/head',
-            header: '/partials/header',
-            component: '/partials/contact',
-        }
-    });
-});
 
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
