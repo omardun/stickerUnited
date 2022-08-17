@@ -1,21 +1,27 @@
-<h1>Register an Account</h1>
-<form onsubmit="return false"></form>
-<div class="create" id="create">
-    
-    <input type="email" placeholder="Enter your email" id="newEmail" />
-    <br><br>
-    <input type="password" placeholder="Enter password" id="newPassword" />&nbsp;&nbsp;&nbsp;
-    <br><br>
-    <input type="password" placeholder="Enter password (confirm)" id="newPasswordCheck" />
-    <br><br>
-
-    <button onclick="createAccount();">Create Account</button>
-    <div class="create"></div>
-
-<div>Already a User?</div>
-<a href="/login">  
-    <button>Login</button>  
-  </a>
+<div class="container mt-5">
+  <div class="row register-container">
+    <h1>Sign Up</h1>
+    <form onsubmit="return false"></form><!--Is this needed?-->
+    <div class="create" id="create"></div> <!--Is this needed?-->
+    <div class="form-group mt-3">
+      <input type="email" class="form-control" placeholder="Enter Email Address" id="newEmail" />
+    </div>
+    <div class="form-group mt-3">
+      <input type="password" class="form-control" placeholder="Enter Password" id="newPassword" />&nbsp;&nbsp;&nbsp;
+      <input type="password" class="form-control" placeholder="Confirm Password" id="newPasswordCheck" />
+    </div>
+    <div class="form-group mt-3">
+      <button class="btn btn-dark mt-3" onclick="createAccount();">Create Account</button>
+      <div class="create"></div>
+    </div>
+    <div class="form-group mt-3">
+      <div>Already a User?</div>
+      <a href="/login">
+        <button class="btn btn-light mt-1">Login</button>
+      </a>
+    </div>
+  </div>
+</div>
 </div>
 
 <script src="/scripts/register.js"></script>

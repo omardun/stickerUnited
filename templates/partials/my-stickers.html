@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <h1 class="display-4">My Stickers</h1>
+    <a href="/stickers">See All Stickers</a>
+    <hr class="my-4" />
+    <div class="row">
+      ${stickers.map((sticker) => `
+      <div class="stock col-md-6 col-lg-3">
+        <div class="card my-2">
+          <div class="card-body">
+            <h5 class="card-title">${sticker.name}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">${stock.imageURL}</h6>
+            <button class="btn btn-danger" data-id="${stock.id}">
+              Remove from favorites
+            </button>
+          </div>
+        </div>
+      </div>
+      `).join('')}
+    </div>
+  </div>
+  <script src="/js/my-stickers.js"></script>

@@ -4,11 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${title}</title>
-    ${head}
+    <title>Sticker United</title>
+<!-- Bootstrap CSS  -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!--Font Awesome-->
+<script src="https://kit.fontawesome.com/570b672e81.js" crossorigin="anonymous"></script>
+<!--My CSS-->
+<link rel="stylesheet" href="/styles/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aleo&display=swap" rel="stylesheet">
+
 </head>
 <body> 
-  ${header}
+  <nav class="navbar navbar-light p-2 justify-content-between">
+    <!-- <a class="navbar-brand" href="/">Sticker United</a> -->
+    <a class="navbar-brand" href="/"><img src="/image/logo.jpeg" width="300px"/> </a> 
+    
+    <div class="col-md-3 text-end">
+      <a href="/login"><button class="btn btn-dark mt-3">Login</button></a>
+      <a href="/"><button class="btn btn-dark mt-3">Log Out</button></a> <!--Will also read sign up if not logged in-->
+    </div>
+  </nav>
   <div class="container">
   ${component}
   </div>
@@ -17,7 +34,5 @@
   <!--Bootstrap JavaScript-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
   
-  <!--header JavaScript-->
-  <script src="/scripts/header.js"></script>
 </body>
 </html>

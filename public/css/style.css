@@ -54,8 +54,6 @@ h1 {
 .product-title {
   font-size: 35px;
   margin-top: 0.25em;
-  font-family: 'Aleo', serif;
-  
 }
 
 
@@ -63,7 +61,6 @@ h1 {
 .sticker-page-title {
   text-align: center;
   font-size: 50px;
-  font-family: 'Aleo', serif;
 }
 
 .sticker-gallery {
@@ -89,7 +86,6 @@ h1 {
 .sticker-title {
   display: inline;
   font-size: 25px;
-
 }
 
 #star {
@@ -99,10 +95,6 @@ cursor: pointer;
 color: rgb(166, 166, 166);
 
 }
- .home-title {
-   color: rgb(89, 89, 89);
-   font-size: 35px;
- }
 
 /* Media Queries */
 @media only screen and (max-width: 360px) {

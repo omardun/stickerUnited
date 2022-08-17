@@ -1,11 +1,11 @@
-const http = require('http');
-const hostname = '127.0.0.1';
+const http = require("http");
+const hostname = "127.0.0.1";
 const port = 3000;
 const db = require('./models')
 const express = require('express');
 const app = express();
-const path = require('path');
-const es6Renderer = require('express-es6-template-engine');
+const path = require("path");
+const es6Renderer = require("express-es6-template-engine");
 const server = http.createServer(app);
 const session = require('express-session')
 
@@ -20,20 +20,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // Homepage
-app.get('/', async (req, res) => {
-    const stickers = await db.Sticker.findAll()
-    res.render('template', {
-        locals: {
-            title: "Sticker United",
-            stickers
-        },
-        partials: {
-            head: '/partials/head',
-            header: '/partials/header',
-            component: '/partials/home',
-
-        }
-    });
+app.get("/", async (req, res) => {
+  const stickers = await db.Sticker.findAll();
+  res.render("template", {
+    locals: {
+      stickers,
+    },
+    partials: {
+      component: "/partials/home",
+    },
+  });
 });
 
 // All Stickers Page
@@ -181,17 +177,14 @@ app.get('/favorites', async (req, res) => {
 });
 
 // Register Page
-app.get('/register', (req, res) => {
-    res.render('template', {
-        locals: {
-            title: "Sticker United"
-        },
-        partials: {
-            head: '/partials/head',
-            header: '/partials/header',
-            component: '/partials/register',
-        }
-    });
+app.get("/register", (req, res) => {
+  res.render("template", {
+    locals: {
+    },
+    partials: {
+      component: "/partials/register",
+    },
+  });
 });
 
 //Register Post
@@ -229,17 +222,14 @@ app.post('/register', (req, res) => {
 })
 
 // Login Page
-app.get('/login', (req, res) => {
-    res.render('template', {
-        locals: {
-            title: "Sticker United"
-        },
-        partials: {
-            head: '/partials/head',
-            header: '/partials/header',
-            component: '/partials/login',
-        }
-    });
+app.get("/login", (req, res) => {
+  res.render("template", {
+    locals: {
+    },
+    partials: {
+      component: "/partials/login",
+    },
+  });
 });
 
 //Login Post
@@ -303,7 +293,6 @@ app.get('/contact', (req, res) => {
     });
 });
 
-
 server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
