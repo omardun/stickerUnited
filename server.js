@@ -253,28 +253,7 @@ console.log(email);
         console.log(e);
         res.json({ message: 'failure' });
       }
-    // models.User.findAll({
-    //     where: { email: email }
-    // }).then((users) => {
-    //     // const currentUser = users.find(user => {
-    //     //     return user.email == email
-    //     // })
-    //     // if (currentUser) 
-    //     {
-    //         bcrypt.compare(password, currentUser.password, function (err, result) {
-    //             if (result) {
-    //                 req.session.name = req.body.email
-    //                 req.session.username = currentUser.dataValues.id
-    //                 res.redirect('/')
-    //             }
-    //             else {
-    //                 res.render('home', {message: 0})
-    //             }
-    //         })
-    //     }
-    //     else {
-    //         res.render('login', {message: 1})
-    //     }
+   
 })
 
 
