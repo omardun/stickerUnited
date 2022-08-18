@@ -131,3 +131,14 @@ color: rgb(166, 166, 166);
   }
 
 }
+.icon  {
+  color: rgba(169, 163, 163, 0.633);
+}
+
+.word {
+  display: flex;
+  justify-content: flex-start;
+}
+.word .icon {
+  margin-left: 15px;
+}

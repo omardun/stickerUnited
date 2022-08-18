@@ -1,21 +1,35 @@
 <div class="container">
     <div class="stickers-cont">
-    <h1 class="sticker-page-title">Cartoons</h1>
-    <div class="sticker-gallery">
-        <div class="sticker-single">
-            <img src="${stickers[8].imageURL}" />
-            <p>
-                <h2 class="sticker-title">${stickers[8].name}</h2>
-                <i class="fa-solid fa-star fa-2x" id="star"></i>
-            </p>
-        </div>
-        <div class="sticker-single">
-            <img src="${stickers[9].imageURL}" />
-            <p>
-                <h2 class="sticker-title">${stickers[9].name}</h2>
-                <i class="fa-solid fa-star fa-2x" id="star"></i>
-            </p>
+        <h1 class="sticker-page-title">Cartoons</h1>
+        <div class="sticker-gallery">
+            <div class="sticker-single">
+                <img src="${stickers[8].imageURL}" />
+                <p>
+                <div class="word">
+                    <h2 class="sticker-title">${stickers[8].name}</h2>
+                    <div class="icon" onclick="getElementById('ben').style.color= '#FFD500' "><i
+                            class="fa-solid fa-star fa-2x" id="ben"></i> Like
+                    </div>
+                </div>
+                </p>
+            </div>
+            <div class="sticker-single">
+                <p>
+                    <img src="${stickers[9].imageURL}" />
+
+                <div class="word">
+                    <h2 class="sticker-title">${stickers[9].name}</h2>
+                    <div class="icon" onclick="getElementById('ed').style.color= '#FFD500' "><i
+                            class="fa-solid fa-star fa-2x" id="ed"></i> Like
+                    </div>
+                </div>
+
+                </div>
+
+
+                </p>
+            </div>
         </div>
     </div>
-</div>
-</div>
+
+    <script src="/js/favs.js"></script>
