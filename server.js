@@ -33,6 +33,7 @@ app.get("/", async (req, res) => {
   // All Stickers Page
   app.get("/stickers", async (req, res) => {
     const stickers = await db.Sticker.findAll();
+    // res.json(stickers)
     res.render("template", {
       locals: {
         stickers,

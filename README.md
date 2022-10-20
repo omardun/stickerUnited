@@ -8,7 +8,7 @@
  - [Acknowledgments](#acknowledgments)
 
 ## About the Project
-Sticker United allows you to browse stickers and keep track of your favorite ones. It is the starts of an eventual e-commerce sticker shop. 
+Sticker United allows you to browse stickers and keep track of your favorite ones. It is the start of an eventual e-commerce sticker shop. 
 
 ## Screenshots
 <img src="public/image/SS01.png">
